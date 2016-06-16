@@ -24,7 +24,7 @@ public class MyService extends Service {
     private LocationManager locationManager;
     private String locationProvider;
     private LatLng latlong;
-    private boolean yalatomo = false;
+
 
     public class LocalBinder extends Binder {
         MyService getService() {
@@ -47,12 +47,12 @@ public class MyService extends Service {
     public void onCreate() {
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
-        Log.d("servicio", "Servicio creado...");
+        Log.d("prueba", "Servicio creado...");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d("servicio", "Servicio iniciado...");
+        Log.d("prueba", "Servicio iniciado...");
         Criteria criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
         criteria.setPowerRequirement(Criteria.POWER_HIGH);
@@ -61,12 +61,12 @@ public class MyService extends Service {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
                 // makeUseOfNewLocation(location);
-                yalatomo = true;
+
 
                 latlong=new LatLng(location.getLatitude(),location.getLongitude());
 
-                Log.i("MAPA", "onLocationChanged: ");
-                //zLog.isLoggable("UBICACION ",)
+                Log.d("prueba", "onLocationChanged: "+latlong.toString());
+
 
             }
 
@@ -104,21 +104,23 @@ public class MyService extends Service {
 
     @Override
     public void onDestroy() {
-        Log.d("servicio", "Servicio destruido...");
+
+        Log.d("prueba", "Servicio destruido...");
     }
 
     public LatLng mostrar(){
 
         if (latlong  != null)
         {
-            Log.d("servicio", latlong.toString()+" ");
+            Log.d("prueba", latlong.toString()+" ");
             return latlong;
         }
         else
         {
-            Log.d("servicio","NULO");
+            Log.d("prueba","NULO");
             return new LatLng(0,0);
         }
     }
+    
 
 }

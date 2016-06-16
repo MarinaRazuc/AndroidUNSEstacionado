@@ -14,9 +14,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".Main2Activity" />
 
         <service
@@ -24,15 +22,14 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity
-            android:name=".iniciar"
-            >
+        <activity android:name=".iniciar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

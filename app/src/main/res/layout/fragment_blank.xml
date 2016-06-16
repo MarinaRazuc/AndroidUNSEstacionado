@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     tools:context="fragmentos.BlankFragment"
     android:id="@+id/fragmento">
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
     <!-- TODO: Update blank fragment layout -->
     <Button
         android:layout_width="wrap_content"
@@ -12,5 +16,13 @@
         android:text="mostrar Posicion"
         android:id="@+id/mostrarPos"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nueva Posición"
+        android:id="@+id/nuevaPos"
+        />
+</LinearLayout>
+
 
 </FrameLayout>

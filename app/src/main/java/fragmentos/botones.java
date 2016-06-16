@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.user.estacionado.R;
+import com.google.android.gms.maps.model.LatLng;
 
 public class botones extends Fragment {
     private View v;
@@ -55,6 +56,12 @@ public class botones extends Fragment {
                 mostrarPosicionFragment();
             }
         });
+        v.findViewById(R.id.nuevaPos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NuevaPosicionFragment();
+            }
+        });
 
         return v;
 
@@ -63,6 +70,11 @@ public class botones extends Fragment {
     public void mostrarPosicionFragment(){
         if (mListener != null) {
             mListener.mostrarPosicion();
+        }
+    }
+    public void NuevaPosicionFragment(){
+        if (mListener != null) {
+            mListener.NuevaPosicion();
         }
     }
 
@@ -100,5 +112,6 @@ public class botones extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void mostrarPosicion();
+        void NuevaPosicion();
     }
 }

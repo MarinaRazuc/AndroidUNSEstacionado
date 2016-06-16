@@ -14,9 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Donde estacione mi auto?" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="guardar Pos"
-        android:onClick="guardar"/>
+        android:text="Guardar Ubicación"
+        android:enabled="false"
+        android:onClick="guardar"
+        android:id="@+id/botonGuardar"
+        />
 </LinearLayout>
